@@ -5,21 +5,18 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.css']
+  styleUrls: ['./child.component.css'],
 })
 export class ChildComponent implements OnInit {
   name: string;
   id: number;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.params.subscribe(
-      (params)=> {
-        this.id=+params['id'];
-        this.name= params['name'];
-      }
-    );
+    this.route.queryParams.subscribe((params) => {
+      this.id = params['id'];
+      this.name = params['name'];
+    });
   }
-
 }
