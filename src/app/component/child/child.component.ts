@@ -1,6 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-child',
@@ -12,7 +13,7 @@ export class ChildComponent implements OnInit {
   id: number;
 
   constructor(private route: ActivatedRoute) {}
-
+  
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
       this.id = params['id'];

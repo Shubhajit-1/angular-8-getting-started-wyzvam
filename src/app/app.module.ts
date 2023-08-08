@@ -7,18 +7,23 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ChildComponent } from './component/child/child.component';
+import { UserComponent } from './component/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'child', component: ChildComponent },
+      { path: 'user', component: UserComponent },
     ]),
   ],
   declarations: [
     AppComponent,
+    UserComponent,
     ChildComponent,
     TopBarComponent,
     ProductListComponent,
